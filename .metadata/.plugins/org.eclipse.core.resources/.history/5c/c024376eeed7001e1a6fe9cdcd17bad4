@@ -1,0 +1,17 @@
+package page;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+
+import BasicSetup.Base;
+
+public class SearchProduct extends Base
+{
+	public void productSearch()
+	{
+		driver.findElement(By.name("q")).sendKeys("Watch", Keys.ENTER);
+		driver.findElement(By.xpath("//*[@title=\"Edge Squircle Analog Watch  - For Men 1841NC01\"]")).click();
+		
+	}
+
+}

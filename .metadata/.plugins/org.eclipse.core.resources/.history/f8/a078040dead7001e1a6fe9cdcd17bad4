@@ -1,0 +1,14 @@
+package page;
+
+import org.openqa.selenium.By;
+
+import BasicSetup.Base;
+
+public class LoginPage extends Base
+{
+	public void Login()
+	{
+		driver.findElement(By.linkText("Login")).click();
+		driver.findElement(By.className("_2IX_2- VJZDxU")).sendKeys("8839463609");
+	}
+}

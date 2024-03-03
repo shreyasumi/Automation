@@ -1,0 +1,7 @@
+package page;
+
+import BasicSetup.Base;
+
+public class ShippingDetails extends Base {
+
+}

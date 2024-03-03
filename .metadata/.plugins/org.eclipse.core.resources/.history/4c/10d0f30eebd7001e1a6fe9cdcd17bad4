@@ -1,0 +1,8 @@
+package page;
+
+import BasicSetup.Base;
+
+public class SearchProduct extends Base
+{
+
+}

@@ -1,0 +1,28 @@
+package page;
+
+import java.util.ArrayList;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+
+import BasicSetup.Base;
+
+public class SearchProduct extends Base
+{
+	public void productSearch()
+	{
+		driver.findElement(By.name("q")).sendKeys("Watch", Keys.ENTER);
+		driver.findElement(By.xpath("//*[@title=\"Bleed Blue Day and Date Functioning Strap Adult Quartz Analog Watch  - For Men LS2821\"]")).click();
+       
+        Set<String> s=driver.getWindowHandles();
+        ArrayList arr=new ArrayList(s);
+        driver.switchTo().window((String)arr.get(1));
+        driver.findElement(By.xpath("//*[@class=\"_2KpZ6l _2U9uOA _3v1-ww\"]")).click();
+       
+        
+        
+		
+	}
+
+}

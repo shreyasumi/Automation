@@ -1,0 +1,13 @@
+package page;
+
+public class Testjava {
+	public static void main(String[]args) {
+		FlipkartHomePage homepage = new FlipkartHomePage();
+		homepage.initialize();
+		homepage.NavigateTo();
+		
+		FlipkartLoginPage login = new FlipkartLoginPage();
+		login.userName().sendKeys("7004192941");
+	}
+
+}

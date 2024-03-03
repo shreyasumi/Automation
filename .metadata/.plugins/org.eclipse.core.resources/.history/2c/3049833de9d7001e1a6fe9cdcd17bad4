@@ -1,0 +1,34 @@
+package TestRunner;
+
+import org.testng.annotations.Test;
+
+import page.LoginPage;
+
+
+
+public class Runner extends LoginPage
+{
+	
+	@Test
+	public void testOne()
+	{
+		
+		
+		openBrowser();
+		openURL();	
+		closeBrowser();
+	}
+}
+
+/*
+class LoginPage
+{
+	Login()
+	{}
+}
+
+public class Runner
+{
+	LoginPage lp = new LoginPage();
+	lp.Login();
+}*/

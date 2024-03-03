@@ -1,0 +1,37 @@
+package Demoqa;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class Basic 
+{
+	@Test
+	public void invokeBrowser()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://blazedemo.com/index.php");
+		driver.manage().window().maximize();
+		String expectedTitle = "BlazeDemo";
+		String actualTitle = driver.getTitle();
+		Assert.assertEquals(actualTitle,expectedTitle);
+		
+		WebElement deputurecity = driver.findElement(By.xpath("//select[@name='fromPort']"));
+		Select select1 = new Select(deputurecity);
+		select1.selectByVisibleText("Mexico City");
+		WebElement destinationcity = driver.findElement(By.xpath("//select[@name='toPort']"));
+		Select select2 = new Select(destinationcity);
+		select2.selectByVisibleText("London");
+		
+		driver.findElement(By.xpath("//input[@value='Find Flights']")).click();
+		driver.findElement(By.xpath("//tbody/tr[3]/td[1]/input[1]")).click();
+	}
+	
+	
+
+}

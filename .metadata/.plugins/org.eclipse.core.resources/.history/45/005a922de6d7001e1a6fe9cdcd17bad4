@@ -1,0 +1,33 @@
+package page;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BasePage {
+	WebDriver driver;
+	
+	
+	public void initialize() //initialize the driver
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		driver = new ChromeDriver();	
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	}
+	
+	public void openURL()
+	{
+		driver.get("https://www.udemy.com/");
+	}
+	
+	
+	public void closeDriver() //close the driver
+	{
+	driver.quit();	
+	}
+	
+	
+
+}
